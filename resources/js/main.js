@@ -1,0 +1,4 @@
+$('.playvideo').ready(function() {
+    autoPlayYouTubeModal();
+});
+
