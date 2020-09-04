@@ -39,18 +39,37 @@
                     </div>
                 </div>
 
-                <div class="mt-12">
-                    <a href="{{ 'https://www.youtube.com/watch?v='.$movie['videos']['results'][0]['key'] }}" class="flex inline-flex
-                    cursor-pointer items-center bg-orange-500
-                    text-gray-900
-                    rounded
-                    font-semibold
-                    px-5 py-4
-                    hover:bg-orange-600
-                    transition ease-in-out duration-150" target="_blank">
-                        <svg class="w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336 336"><path d="M286.8 49.2C256.4 18.8 214.4 0 168 0 121.6 0 79.6 18.8 49.2 49.2 18.8 79.6 0 121.6 0 168c0 46.4 18.8 88.4 49.2 118.8C79.6 317.2 121.6 336 168 336c46.4 0 88.4-18.8 118.8-49.2C317.2 256.4 336 214.4 336 168c0-46.4-18.8-88.4-49.2-118.8zm-14.4 223.2c-26.8 26.8-63.6 43.2-104.4 43.2s-77.6-16.4-104.4-43.2C37.2 245.6 20.4 208.8 20.4 168S36.8 90.4 63.6 63.6C90.4 36.8 127.2 20.4 168 20.4s77.6 16.4 104.4 43.2c26.8 26.8 43.2 63.6 43.2 104.4s-16.8 77.6-43.2 104.4z"/><path d="M261.2 156c-.8-.8-2-2.4-3.2-4l-.8-.8c-1.2-1.2-2.4-2-4-2.8l-59.2-34s-.4 0-.4-.4L134 79.6c-5.2-3.2-11.2-3.6-16.8-2.4-5.6 1.6-10.4 5.2-13.6 10.4-1.2 1.6-1.6 3.6-2.4 5.2-.4 1.2-.4 2.8-.8 4.4v139.6c0 6 2.4 11.6 6.4 15.6s9.6 6.4 15.6 6.4c2 0 4.4-.4 6.4-1.2s4-1.6 5.6-2.8l58.8-34 .8-.4 59.2-34c.4 0 .4-.4.8-.4 4.8-3.2 8.4-8 9.6-13.2 1.6-5.6.8-11.6-2.4-16.8zM244 168.4c0 .4-.4.8-.8.8h-.4L184 203.6l-.4.4-58.8 34c-.4 0-.4.4-.8.4 0 0-.4 0-.4.4h-.4c-.4 0-.8-.4-1.2-.4-.4-.4-.4-.8-.4-1.2V98.4c.4-.4.8-.8 1.2-.8h1.2l59.2 34 .4.4 59.6 34.4.4.4.4.4v1.2z"/></svg>
-                        <span class="ml-2">Play Trailer</span>
-                    </a>
+                <div x-data="{ isOpen: false }">
+                    <div class="mt-12">
+                        <button
+                            @click="isOpen = true"
+                            class="flex inline-flexcursor-pointer items-center bg-orange-500 text-gray-900 rounded font-semibold px-5 py-4 hover:bg-orange-600transition ease-in-out duration-150" target="_blank">
+                            <svg class="w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 336 336"><path d="M286.8 49.2C256.4 18.8 214.4 0 168 0 121.6 0 79.6 18.8 49.2 49.2 18.8 79.6 0 121.6 0 168c0 46.4 18.8 88.4 49.2 118.8C79.6 317.2 121.6 336 168 336c46.4 0 88.4-18.8 118.8-49.2C317.2 256.4 336 214.4 336 168c0-46.4-18.8-88.4-49.2-118.8zm-14.4 223.2c-26.8 26.8-63.6 43.2-104.4 43.2s-77.6-16.4-104.4-43.2C37.2 245.6 20.4 208.8 20.4 168S36.8 90.4 63.6 63.6C90.4 36.8 127.2 20.4 168 20.4s77.6 16.4 104.4 43.2c26.8 26.8 43.2 63.6 43.2 104.4s-16.8 77.6-43.2 104.4z"/><path d="M261.2 156c-.8-.8-2-2.4-3.2-4l-.8-.8c-1.2-1.2-2.4-2-4-2.8l-59.2-34s-.4 0-.4-.4L134 79.6c-5.2-3.2-11.2-3.6-16.8-2.4-5.6 1.6-10.4 5.2-13.6 10.4-1.2 1.6-1.6 3.6-2.4 5.2-.4 1.2-.4 2.8-.8 4.4v139.6c0 6 2.4 11.6 6.4 15.6s9.6 6.4 15.6 6.4c2 0 4.4-.4 6.4-1.2s4-1.6 5.6-2.8l58.8-34 .8-.4 59.2-34c.4 0 .4-.4.8-.4 4.8-3.2 8.4-8 9.6-13.2 1.6-5.6.8-11.6-2.4-16.8zM244 168.4c0 .4-.4.8-.8.8h-.4L184 203.6l-.4.4-58.8 34c-.4 0-.4.4-.8.4 0 0-.4 0-.4.4h-.4c-.4 0-.8-.4-1.2-.4-.4-.4-.4-.8-.4-1.2V98.4c.4-.4.8-.8 1.2-.8h1.2l59.2 34 .4.4 59.6 34.4.4.4.4.4v1.2z"/></svg>
+                            <span class="ml-2">Play Trailer</span>
+                        </button>
+                    </div>
+                    <div
+                        style="background-color: rgba(0, 0, 0, 0.5)"
+                        class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
+                        x-show.transition.opacity="isOpen"
+                        @click.away="isOpen = false"
+                    >
+                        <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
+                            <div class="bg-gray-900 rounded">
+                                <div class="flex justify-end pr-4 pt-2">
+                                    <button class="text-3xl leading-none hover:text-gray-300" @click="isOpen = false">&times;</button>
+                                </div>
+                                <div class="modal-body px-8 py-8">
+                                    <div class="responsive-container overflow-hidden relative" style="padding-top: 56.25%">
+                                        <iframe width="560" height="400" src={{"https://www.youtube.com/embed/".$movie['videos']['results'][0]['key']}}
+                                                frameborder="0" class="responsive-iframe absolute top-0 left-0 w-full h-full"
+                                                style="border:0;" allow="autoplay; encrypted-media" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,14 +100,20 @@
             </div>
         </div>
     </div>
-    <div class="movie-cast border-b border-gray-800">
+    <div class="movie-cast" x-data="{ isOpen: false, image: ''}">
         <div class="container mx-auto px-4 py-16">
             <h2 class="text-4xl font-semibold">Images</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
                 @foreach($images as $image)
                     @if($loop->index < 9)
                         <div class="mt-4">
-                            <a href="#">
+                            <a
+                                @click.prevent="
+                                    isOpen = true
+                                    image='{{'https://image.tmdb.org/t/p/original/'. $image['file_path']}}'
+                                "
+                                href="#"
+                            >
                                 <img src="{{'https://image.tmdb.org/t/p/w500/'. $image['file_path']}}" alt="image" class="hover:opacity-75 transition
                                 ease-in-out duration-150">
                             </a>
@@ -97,6 +122,24 @@
                 @endforeach
             </div>
         </div>
+
+        <div
+            style="background-color: rgba(0, 0, 0, 0.5)"
+            class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
+            x-show="isOpen"
+        >
+            <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
+                <div class="bg-gray-900 rounded">
+                    <div class="flex justify-end pr-4 pt-2">
+                        <button class="text-3xl leading-none hover:text-gray-300" @click.away="isOpen = false" @click="isOpen = false" @keydown.escape.window="isOpen = false">&times;</button>
+                    </div>
+                    <div class="modal-body px-8 py-8">
+                        <img :src="image" alt="poster">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 @endsection
 
