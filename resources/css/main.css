@@ -5,3 +5,7 @@
 @tailwind utilities;
 
 
+.spinner {
+    position: absolute;
+}
+
